@@ -1,3 +1,8 @@
+<?php
+    if(session_status() == PHP_SESSION_ACTIVE){
+       header('Location: index.php');
+    }
+?>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pt-BR">
   <head> 
@@ -42,7 +47,7 @@
           <div class="u-custom-menu u-nav-container">
             <ul class="u-nav u-spacing-30 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-6 u-border-hover-custom-color-5 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-custom-color-6 u-text-body-alt-color u-text-hover-custom-color-5" href="horti.html" style="padding: 10px 0px;">Catalogo</a>
             </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-6 u-border-hover-custom-color-5 u-border-no-left u-border-no-right    u-border-no-top u-button-style u-nav-link u-text-active-custom-color-6 u-text-body-alt-color u-text-hover-custom-color-5" href="carrinho.html"    style="padding: 10px 0px;">Carrinho</a>
-            </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-6 u-border-hover-custom-color-5 u-border-no-left u-border-no-right    u-border-no-top u-button-style u-nav-link u-text-active-custom-color-6 u-text-body-alt-color u-text-hover-custom-color-5" href="perfil.html" style="padding: 10px 0px;   ">Perfil</a>
+            </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-6 u-border-hover-custom-color-5 u-border-no-left u-border-no-right    u-border-no-top u-button-style u-nav-link u-text-active-custom-color-6 u-text-body-alt-color u-text-hover-custom-color-5" href="perfil.php" style="padding: 10px 0px;   ">Perfil</a>
             </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
