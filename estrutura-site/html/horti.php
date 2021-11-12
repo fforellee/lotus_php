@@ -1,7 +1,9 @@
 <?php
-    if(session_status() == PHP_SESSION_ACTIVE){
-       header('Location: index.php');
-    }
+  if(isset($_SESSION['login'])){
+    header("location:profile.php");
+  }
+  else{
+    header("location:index.php");
 ?>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pt-BR">

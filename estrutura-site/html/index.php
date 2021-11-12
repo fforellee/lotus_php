@@ -1,9 +1,9 @@
 <?php
 include '../php/login.php';
 
-// if (session_status() == PHP_SESSION_ACTIVE) {
-//   header("Location: horti.php");
-//   }
+if ($_SESSION['login']) {
+  header("Location: horti.php");
+  }
 
 ?>
 
