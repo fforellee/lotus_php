@@ -1,6 +1,8 @@
 <?php
 include '../php/login.php';
 
+include '../php/conexao.php';
+
 if (isset($_SESSION['login'])) {
   header("Location: ../html/horti.php");
   }
