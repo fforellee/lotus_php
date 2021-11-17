@@ -1,5 +1,5 @@
 <?php 
-
+    //include  (../php/conexao.php);
     $servidor = "localhost"; //Utilização do banco de forma local
     $usuario = "root"; 
     $senha = "";
