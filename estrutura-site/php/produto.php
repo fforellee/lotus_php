@@ -6,10 +6,9 @@
     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
     while ($dados = mysqli_fetch_object($result)) {
-        $nome = $dados['Nome'];
+
     }
 
-    $xml .= '</alunos>';
 
 
 ?>

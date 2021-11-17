@@ -1,11 +1,11 @@
 <?php
 include '../php/login.php';
 
-if ($_SESSION['login']) {
-  header("Location: horti.php");
+if (isset($_SESSION['login'])) {
+  header("Location: ../html/horti.php");
   }
-
 ?>
+
 
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pt-BR">

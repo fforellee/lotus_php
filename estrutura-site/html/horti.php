@@ -1,9 +1,10 @@
 <?php
-  if(isset($_SESSION['login'])){
-    header("location:profile.php");
+
+session_start();
+
+if (!isset($_SESSION['login'])) {
+  header("Location: ../html/index.php");
   }
-  else{
-    header("location:index.php");
 ?>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pt-BR">

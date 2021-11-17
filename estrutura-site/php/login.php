@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+
 	if(!isset($_SESSION['login'])) {
 
 		if(isset($_POST['acao'])) {
@@ -20,6 +21,5 @@
 			session_destroy();
 			header('Location: ../horti.php');
 		}
-		include('horti.html');
 	}
 ?>

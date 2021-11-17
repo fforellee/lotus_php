@@ -1,12 +1,11 @@
 <?php
-include '../php/login.php';
-// if(){
-  
-// }else{
+session_start();
 
-// }
-
+if (!isset($_SESSION['login'])) {
+  header("Location: ../html/index.php");
+  }
 ?>
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pt-BR">
   <head> 
@@ -77,7 +76,7 @@ include '../php/login.php';
                   <a href="inserir_dados.html" data-page-id="149127078" class="u-active-custom-color-6 u-border-3 u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-white u-text-body-alt-color u-text-hover-custom-color-4 u-btn-1">INSERIR DADOS</a>
                   <a href="alterar_dados.html" data-page-id="1736617625" class="u-active-custom-color-6 u-border-3 u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-white u-text-body-alt-color u-text-hover-custom-color-4 u-btn-2">ATUALIZAR DADOS</a>
                   <a href="remover_dados.html" data-page-id="857521981" class="u-active-custom-color-6 u-border-3 u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-white u-text-body-alt-color u-text-hover-custom-color-4 u-btn-3">REMOVER DADOS</a>
-                  <a href="../kill_session.php" type="submit" name="logout" class="u-active-custom-color-6 u-border-3 u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-white u-text-body-alt-color u-text-hover-custom-color-4 u-btn-4">SAIR</a>
+                  <a href="../php/kill_session.php" type="submit" name="logout" class="u-active-custom-color-6 u-border-3 u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-white u-text-body-alt-color u-text-hover-custom-color-4 u-btn-4">SAIR</a>
                 </div>
               </div>
               <div class="u-container-style u-custom-color-2 u-layout-cell u-size-45 u-layout-cell-2">
