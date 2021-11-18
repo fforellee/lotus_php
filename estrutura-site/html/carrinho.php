@@ -83,21 +83,20 @@ if (!isset($_SESSION['login'])) {
               </colgroup>
               <thead class="u-table-header">
                 <tr style="height: 46px;">
-                  <th class="u-border-1 u-border-grey-dark-1 u-table-cell">Produto </th>
-                  <th class="u-border-1 u-border-grey-dark-1 u-table-cell">Preço </th>
-                  <th class="u-border-1 u-border-grey-dark-1 u-table-cell">Quantidade </th>
-                  <th class="u-border-1 u-border-grey-dark-1 u-table-cell">Subtotal </th>
+                  <th class=""><h4><b>Produto</b></h4></th>
+                  <th class=""><h4><b>Preço </b></h4></th>
+                  <th class=""><h4><b>Quantidade</b></h4></th>
+                  <th class=""><h4><b>Subtotal</b> </h4></th>
                 </tr>
               </thead>
               <tbody class="u-table-body">
 
+
               <?php while ($dados = mysqli_fetch_object($result))  {?>
                     <tr>
-                      <td><?php echo $dados['Cod_barra'];?></td>
-                      <td><?php echo $dados['Data_vencimento'];?></td>
-                      <td><?php echo $dados['Preço']; ?></td>
-                      <td><?php echo $dados['Cod_categoria']; ?></td>
-                      <td><?php echo $dados['Nome_produto']; ?></td>
+                      <td><?php echo $dados->Nome_produto; ?></td>
+                      <td><?php echo $dados->Preço; ?></td>
+                      <td><?php echo $dados->quantidade; ?></td>
                     </tr>
               <?php } ?>
 
@@ -105,7 +104,7 @@ if (!isset($_SESSION['login'])) {
             </table>
           </div>
           <div class="u-cart-button-container">
-            <a href="#" class="u-active-none u-btn u-button-style u-cart-continue-shopping u-hover-none u-none u-text-body-color u-btn-1"><span class="u-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 443.52 443.52" x="0px" y="0px" style="width: 1em; height: 1em;"><g><g><path d="M143.492,221.863L336.226,29.129c6.663-6.664,6.663-17.468,0-24.132c-6.665-6.662-17.468-6.662-24.132,0l-204.8,204.8    c-6.662,6.664-6.662,17.468,0,24.132l204.8,204.8c6.78,6.548,17.584,6.36,24.132-0.42c6.387-6.614,6.387-17.099,0-23.712    L143.492,221.863z"></path></g></g></svg><img>
+            <a href="javascript:history.back()" class="u-active-none u-btn u-button-style u-cart-continue-shopping u-hover-none u-none u-text-body-color u-btn-1"><span class="u-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 443.52 443.52" x="0px" y="0px" style="width: 1em; height: 1em;"><g><g><path d="M143.492,221.863L336.226,29.129c6.663-6.664,6.663-17.468,0-24.132c-6.665-6.662-17.468-6.662-24.132,0l-204.8,204.8    c-6.662,6.664-6.662,17.468,0,24.132l204.8,204.8c6.78,6.548,17.584,6.36,24.132-0.42c6.387-6.614,6.387-17.099,0-23.712    L143.492,221.863z"></path></g></g></svg><img>
             </span>&nbsp;Continuar Comprando
             </a>
             <a href="#" class="u-btn u-button-style u-cart-update u-grey-5">Atualizar Carrinho</a>

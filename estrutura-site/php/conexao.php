@@ -6,10 +6,5 @@
 
     // cria a conexão com o banco
 
-    // if(mysqli_connect($servidor, $usuario, $senha, $dbname) or die('Erro de conexão')){
-    //     echo"funciona";
-    // }else{
-    //     echo"não funciona";
-    // }
     $conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
 ?>
