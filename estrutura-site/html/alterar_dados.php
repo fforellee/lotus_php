@@ -1,3 +1,16 @@
+<?php
+
+include("../php/conexao.php");
+
+session_start();
+
+$sql = 'SELECT * FROM produto';
+$result = mysqli_query($conn, $sql); 
+if (!isset($_SESSION['login'])) {
+  header("Location: ../html/index.php");
+  }
+
+?>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pt-BR">
   <head> 
@@ -79,7 +92,7 @@
                   <div class="u-form u-form-1">
                     <form action="#" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 0;" source="custom" name="form">
                       <div class="u-form-group u-form-group-1">
-                        <label for="text-c16a" class="u-label u-label-1">Nome</label>
+                        <label for="text-c16a" class="u-label u-label-1"></label>
                         <input type="text" placeholder="nome atual" id="text-c16a" name="alterar_nome" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-form-group u-form-group-2">

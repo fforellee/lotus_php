@@ -9,6 +9,8 @@ $result = mysqli_query($conn, $sql);
 if (!isset($_SESSION['login'])) {
   header("Location: ../html/index.php");
   }
+$total = 0;
+$frete = 50;
 ?>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pt-BR">
@@ -91,15 +93,16 @@ if (!isset($_SESSION['login'])) {
               </thead>
               <tbody class="u-table-body">
 
-
               <?php while ($dados = mysqli_fetch_object($result))  {?>
                     <tr>
                       <td><?php echo $dados->Nome_produto; ?></td>
-                      <td><?php echo $dados->Preço; ?></td>
+                      <td><?php echo "$".number_format($dados->Preço, 2, ',', '.')?></td>
                       <td><?php echo $dados->quantidade; ?></td>
+                      <td><?php echo "$".number_format($dados->quantidade*$dados->Preço, 2, ',', '.');?></td>
                     </tr>
+                   <?php $total += $dados->quantidade*$dados->Preço;?>
               <?php } ?>
-
+              <?php $total += $frete;?>
               </tbody>
             </table>
           </div>
@@ -144,12 +147,12 @@ if (!isset($_SESSION['login'])) {
                       </colgroup>
                       <tbody class="u-align-right u-table-body">
                         <tr style="height: 46px;">
-                          <td class="u-align-left u-border-1 u-border-grey-dark-1 u-first-column u-table-cell u-table-cell-17">Subtotal</td>
-                          <td class="u-border-1 u-border-grey-dark-1 u-table-cell">$281.00</td>
+                          <td class="u-align-left u-border-1 u-border-grey-dark-1 u-first-column u-table-cell u-table-cell-17">Frete</td>
+                          <td class="u-border-1 u-border-grey-dark-1 u-table-cell"><?php echo "$".number_format($frete, 2, ',', '.')?></td>
                         </tr>
                         <tr style="height: 46px;">
                           <td class="u-align-left u-border-1 u-border-grey-dark-1 u-first-column u-table-cell u-table-cell-19">Total</td>
-                          <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-20">$281.00</td>
+                          <td class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-20"><?php echo "$".number_format($total, 2, ',', '.')?></td>
                         </tr>
                       </tbody>
                     </table>
