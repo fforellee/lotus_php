@@ -77,9 +77,9 @@ if (!isset($_SESSION['login'])) {
             <div class="u-layout-row">
               <div class="u-container-style u-custom-color-4 u-layout-cell u-size-15 u-layout-cell-1">
                 <div class="u-container-layout u-valign-bottom u-container-layout-1">
-                  <a href="inserir_dados.html" data-page-id="149127078" class="u-active-custom-color-6 u-border-3 u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-white u-text-body-alt-color u-text-hover-custom-color-4 u-btn-1">INSERIR DADOS</a>
+                  <a href="inserir_dados.php" data-page-id="149127078" class="u-active-custom-color-6 u-border-3 u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-white u-text-body-alt-color u-text-hover-custom-color-4 u-btn-1">INSERIR DADOS</a>
                   <a href="alterar_dados.php" data-page-id="1736617625" class="u-active-custom-color-6 u-border-3 u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-white u-text-body-alt-color u-text-hover-custom-color-4 u-btn-2">ATUALIZAR DADOS</a>
-                  <a href="remover_dados.html" data-page-id="857521981" class="u-active-custom-color-6 u-border-3 u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-white u-text-body-alt-color u-text-hover-custom-color-4 u-btn-3">REMOVER DADOS</a>
+                  <a href="remover_dados.php" data-page-id="857521981" class="u-active-custom-color-6 u-border-3 u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-white u-text-body-alt-color u-text-hover-custom-color-4 u-btn-3">REMOVER DADOS</a>
                   <a href="../php/kill_session.php" type="submit" name="logout" class="u-active-custom-color-6 u-border-3 u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-white u-text-body-alt-color u-text-hover-custom-color-4 u-btn-4">SAIR</a>
                 </div>
               </div>
@@ -101,7 +101,8 @@ if (!isset($_SESSION['login'])) {
                   <h5 class="u-text u-text-10">CEP</h5>
                   <p class="u-text u-text-1"><?php echo $dados->Endereço_CEP;?></h5>
                   <h5 class="u-text u-text-12">Logradouro</h5>
-                  <p class="u-text u-text-1"><?php echo $dados->Endereço_Num_residencia;?></h5> <h5 class="u-text u-text-2"><?php echo $dados->Nome_completo;?></h5> <h4 class="u-text u-text-default u-text-15"><span class="u-file-icon u-icon u-text-custom-color-4 u-icon-2"><img src="../images/cartao.png" alt=""></span>
+                  <br>
+                  <!-- <p class="u-text u-text-1"><?php echo $dados->Endereço_Num_residencia;?></h5> <h5 class="u-text u-text-2"><?php echo $dados->Nome_completo;?></h5> <h4 class="u-text u-text-default u-text-15"><span class="u-file-icon u-icon u-text-custom-color-4 u-icon-2"><img src="../images/cartao.png" alt=""></span> -->
                 <?php } ?>
                     <span class="u-text-custom-color-4">&nbsp;Informações do Cartão</span>
                   </h4>

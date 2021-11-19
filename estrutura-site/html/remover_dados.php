@@ -1,21 +1,21 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pt-BR">
-  <head> 
+  <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content=""> 
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Inserir Dados</title>
+    <title>Remover Dados</title>
     <link rel="stylesheet" href="../css/profile.css" media="screen">
-    <link rel="stylesheet" href="../css/inserir_dados.css" media="screen">
+    <link rel="stylesheet" href="../css/remover_dados.css" media="screen">
     <script class="u-script" type="text/javascript" src="../js/jquery2.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="../js/profile.js" defer=""></script>
     <script src="../js/js.js"></script>
     <meta name="generator" content="Nicepage 3.28.3, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     <link rel="shortcut icon" href="../images/favico.png" type="image/x-icon">
-    
+
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -24,7 +24,7 @@
     </script>
 
     <meta name="theme-color" content="#456ee8">
-    <meta property="og:title" content="inserir_dados">
+    <meta property="og:title" content="remover_dados">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
   </head>
@@ -57,17 +57,17 @@
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
-        </nav>
+        </nav> 
       </div></header>
-      <h3 class="u-text u-text-default u-text-1">Inserir dados à conta</h3>
-    <section class="u-clearfix u-section-1" id="sec-1a50">
+      <h3 class="u-text u-text-default u-text-1">Remover dados da conta</h3>
+    <section class="u-clearfix u-section-1" id="sec-3b75">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
           <div class="u-gutter-0 u-layout">
             <div class="u-layout-row">
               <div class="u-container-style u-custom-color-4 u-layout-cell u-size-15 u-layout-cell-1">
                 <div class="u-container-layout u-valign-middle u-container-layout-1">
-                  <a href="perfil.html" data-page-id="267483829" class="u-active-custom-color-6 u-border-3 u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-white u-text-body-alt-color u-text-hover-custom-color-4 u-btn-1">CANCELAR</a>
+                  <a href="perfil.php" data-page-id="267483829" class="u-active-custom-color-6 u-border-3 u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-white u-text-body-alt-color u-text-hover-custom-color-4 u-btn-1">CANCELAR</a>
                 </div>
               </div>
               <div class="u-container-style u-custom-color-2 u-layout-cell u-size-45 u-layout-cell-2">
@@ -77,25 +77,29 @@
                   </h4>
                   <div class="u-border-3 u-border-custom-color-4 u-expanded-width u-line u-line-horizontal u-line-1"></div>
                   <div class="u-form u-form-1">
-                    <form action="#" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 0;" source="custom" name="form_inserir">
+                    <form action="#" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 0;" source="custom" name="form">
                       <div class="u-form-group u-form-group-1">
-                        <label for="text-9ad7" class="u-label u-label-1">Complemento</label>
-                        <input type="text" placeholder="complemento atual" id="text-9ad7" name="inserir_complemento" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
+                        <label for="text-10ca" class="u-label u-label-1">CEP</label>
+                        <input type="text" id="text-10ca" name="remover_cep" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" placeholder="cep atual" maxlength="9" onkeyup="mascara(this, mcep);">
                       </div>
                       <div class="u-form-group u-form-group-2">
-                        <label for="text-10ca" class="u-label u-label-2">Número do Cartão</label>
-                        <input type="text" id="text-10ca" name="inserir_numero_cartao" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" placeholder="1234.1234.1234.1234" maxlength="19" onkeyup="mascara(this, mncard);">
+                        <label for="text-c63f" class="u-label u-label-2">Logradouro(s)</label>
+                        <input type="text" placeholder="Endereço 1" id="text-c63f" name="remover_logradouro" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-form-group u-form-group-3">
-                        <label for="text-c63f" class="u-label u-label-3">Data de Vencimento</label>
-                        <input type="text" placeholder="12/34" id="text-c63f" name="inserir_data_cartao" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" maxlength="5" onkeyup="mascara(this, mdcard);">
+                        <label for="text-2358" class="u-form-control-hidden u-label u-label-3"></label>
+                        <input type="text" placeholder="Endereço 2" id="text-2358" name="remover_logradouro2" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-form-group u-form-group-4">
-                        <label for="text-db53" class="u-label u-label-4">Código de Segurança</label>
-                        <input type="text" placeholder="123" id="text-db53" name="inserir_codigo_cartao" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" maxlength="4">
+                        <label for="text-db53" class="u-label u-label-4">Número da Residência</label>
+                        <input type="text" placeholder="123" id="text-db53" name="remover_numero" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
+                      </div>
+                      <div class="u-form-group u-form-group-5">
+                        <label for="text-9ad7" class="u-label u-label-5">Complemento</label>
+                        <input type="text" placeholder="complemento atual" id="text-9ad7" name="remover_complemento" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-align-center u-form-group u-form-submit">
-                        <a href="#" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-4 u-hover-custom-color-5 u-radius-12 u-btn-2">INSERIR DADOS<br>
+                        <a href="#" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-4 u-hover-custom-color-5 u-radius-12 u-btn-2">REMOVER DADOS<br>
                         </a>
                         <input type="submit" value="submit" class="u-form-control-hidden">
                       </div>
@@ -103,14 +107,6 @@
                       <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
                       <input type="hidden" value="" name="recaptchaResponse">
                     </form>
-                  </div>
-                  <div class="u-container-style u-expanded-width u-group u-group-1">
-                    <div class="u-container-layout">
-                      <h4 class="u-text u-text-default u-text-2"><span class="u-file-icon u-icon u-text-custom-color-4 u-icon-2"><img src="../images/cartao1.png" alt=""></span>
-                        <span class="u-text-custom-color-4">&nbsp;Informações do Cartão</span>
-                      </h4>
-                      <div class="u-border-3 u-border-custom-color-4 u-expanded-width u-line u-line-horizontal u-line-2"></div>
-                    </div>
                   </div>
                 </div>
               </div>

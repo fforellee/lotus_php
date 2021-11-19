@@ -4,11 +4,12 @@ include("../php/conexao.php");
 
 session_start();
 
-$sql = 'SELECT * FROM produto';
+$sql = 'SELECT * FROM cliente';
 $result = mysqli_query($conn, $sql); 
 if (!isset($_SESSION['login'])) {
   header("Location: ../html/index.php");
   }
+$dados = mysqli_fetch_object($result);
 
 ?>
 <!DOCTYPE html>
@@ -80,7 +81,7 @@ if (!isset($_SESSION['login'])) {
             <div class="u-layout-row">
               <div class="u-container-style u-custom-color-4 u-layout-cell u-size-15 u-layout-cell-1">
                 <div class="u-container-layout u-valign-middle u-container-layout-1">
-                  <a href="perfil.html" data-page-id="267483829" class="u-active-custom-color-6 u-border-3 u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-white u-text-body-alt-color u-text-hover-custom-color-4 u-btn-1">CANCELAR</a>
+                  <a href="perfil.php" data-page-id="267483829" class="u-active-custom-color-6 u-border-3 u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-white u-text-body-alt-color u-text-hover-custom-color-4 u-btn-1">CANCELAR</a>
                 </div>
               </div>
               <div class="u-container-style u-custom-color-2 u-layout-cell u-size-45 u-layout-cell-2">
@@ -93,19 +94,19 @@ if (!isset($_SESSION['login'])) {
                     <form action="#" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 0;" source="custom" name="form">
                       <div class="u-form-group u-form-group-1">
                         <label for="text-c16a" class="u-label u-label-1"></label>
-                        <input type="text" placeholder="nome atual" id="text-c16a" name="alterar_nome" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
+                        <input type="text" placeholder="<?php echo $dados->Nome_completo;?>" id="text-c16a" name="alterar_nome" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-form-group u-form-group-2">
                         <label for="text-2a8c" class="u-label u-label-2">Data de Nascimento</label>
-                        <input type="text" placeholder="dd/mm/aaaa" id="text-2a8c" name="alterar_data" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" maxlength="10" onkeyup="mascara(this, mdata);">
+                        <input type="text" placeholder="<?php echo $dados->Data_nascimento;?>" id="text-2a8c" name="alterar_data" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" maxlength="10" onkeyup="mascara(this, mdata);">
                       </div>
                       <div class="u-form-group u-form-group-3">
                         <label for="text-da6f" class="u-label u-label-3">CPF</label>
-                        <input type="text" placeholder="123.456.789-10" id="text-da6f" name="alterar_cpf" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" maxlength="14" onkeyup="mascara(this, mcpf);">
+                        <input type="text" placeholder="<?php echo $dados->CPF;?>" id="text-da6f" name="alterar_cpf" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" maxlength="14" onkeyup="mascara(this, mcpf);">
                       </div>
                       <div class="u-form-group u-form-group-4">
                         <label for="text-7700" class="u-label u-label-4">Email</label>
-                        <input type="email" placeholder="user@local.com" id="text-7700" name="alterar_email" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
+                        <input type="email" placeholder="<?php echo $dados->Email;?>" id="text-7700" name="alterar_email" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-form-group u-form-group-5">
                         <label for="text-3a02" class="u-label u-label-5">Senha</label>
@@ -117,19 +118,19 @@ if (!isset($_SESSION['login'])) {
                       </div> 
                       <div class="u-form-group u-form-group-7">
                         <label for="text-c63f" class="u-label u-label-7">Logradouro</label>
-                        <input type="text" placeholder="Endereço 1" id="text-c63f" name="alterar_logradouro" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
+                        <input type="text" placeholder="<?php echo $dados->Endereço_Logradouro?>" id="text-c63f" name="alterar_logradouro" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-form-group u-form-group-8">
                         <label for="text-2358" class="u-form-control-hidden u-label u-label-8"></label>
-                        <input type="text" placeholder="Endereço 2" id="text-2358" name="alterar_logradouro2" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
+                        <input type="text" placeholder="<?php echo $dados->Endereço_Num_residencia;?>" id="text-2358" name="alterar_logradouro2" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-form-group u-form-group-9">
                         <label for="text-db53" class="u-label u-label-9">Número da Residência</label>
-                        <input type="text" placeholder="123" id="text-db53" name="alterar_numero" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
+                        <input type="text" placeholder="<?php echo $dados->Endereço_Num_residencia;?>" id="text-db53" name="alterar_numero" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-form-group u-form-group-10">
                         <label for="text-9ad7" class="u-label u-label-10">Complemento</label>
-                        <input type="text" placeholder="complemento atual" id="text-9ad7" name="alterar_complemento" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
+                        <input type="text" placeholder="<?php echo $dados->Endereço_Complemento;?>" id="text-9ad7" name="alterar_complemento" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-align-center u-form-group u-form-submit">
                         <a href="#" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-4 u-hover-custom-color-5 u-radius-12 u-btn-2">ALTERAR DADOS<br>

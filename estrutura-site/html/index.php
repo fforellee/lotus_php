@@ -1,11 +1,15 @@
 <?php
 include '../php/login.php';
-
 include '../php/conexao.php';
+
+$sql = 'SELECT * FROM cliente';
+$result = mysqli_query($conn, $sql); 
+$dados = mysqli_fetch_object($result);
 
 if (isset($_SESSION['login'])) {
   header("Location: ../html/horti.php");
   }
+
 ?>
 
 
