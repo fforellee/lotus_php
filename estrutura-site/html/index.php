@@ -64,7 +64,7 @@ if (isset($_SESSION['login'])) {
                       </div>
                     </form>
                   </div>
-                  <p class="u-small-text u-text u-text-default u-text-variant u-text-2">Ainda não possui conta? <a href="../html/cadastro.html" data-page-id="834983" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-active-custom-color-5 u-text-custom-color-4 u-text-hover-custom-color-6 u-btn-2">Clique aqui</a> e cadastre-se.
+                  <p class="u-small-text u-text u-text-default u-text-variant u-text-2">Ainda não possui conta? <a href="../html/cadastro.php" data-page-id="834983" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-active-custom-color-5 u-text-custom-color-4 u-text-hover-custom-color-6 u-btn-2">Clique aqui</a> e cadastre-se.
                   </p>
                 </div>
               </div>

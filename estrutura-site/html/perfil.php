@@ -3,7 +3,7 @@ include("../php/conexao.php");
 
 session_start();
 
-$sql = 'SELECT * FROM cliente'; //Falta where com id do cliente
+$sql = "SELECT * FROM cliente WHERE CPF ='".$_SESSION['CPF']."'"; //Falta where com id do cliente
 $result = mysqli_query($conn, $sql); 
 if (!isset($_SESSION['login'])) {
   header("Location: ../html/index.php");
@@ -101,6 +101,8 @@ if (!isset($_SESSION['login'])) {
                   <h5 class="u-text u-text-10">CEP</h5>
                   <p class="u-text u-text-1"><?php echo $dados->Endereço_CEP;?></h5>
                   <h5 class="u-text u-text-12">Logradouro</h5>
+                  <p class="u-text u-text-1"><?php echo $dados->Endereço_Logradouro;?></h5>
+                  <br>
                   <br>
                   <!-- <p class="u-text u-text-1"><?php echo $dados->Endereço_Num_residencia;?></h5> <h5 class="u-text u-text-2"><?php echo $dados->Nome_completo;?></h5> <h4 class="u-text u-text-default u-text-15"><span class="u-file-icon u-icon u-text-custom-color-4 u-icon-2"><img src="../images/cartao.png" alt=""></span> -->
                 <?php } ?>

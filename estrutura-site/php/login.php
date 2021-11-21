@@ -11,7 +11,7 @@
 
 			// $sql = 'SELECT * FROM cliente WHERE Email ='.$logFor.'AND'.'Senha ='.$senFor;
 
-			$sql = 'SELECT * FROM cliente WHERE Email'.$logFor;
+			$sql = "SELECT * FROM cliente WHERE Email ='".$logFor."'";
 			$result = mysqli_query($conn, $sql); 
 			$dados = mysqli_fetch_object($result);
 

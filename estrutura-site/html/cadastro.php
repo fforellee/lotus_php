@@ -44,7 +44,7 @@
     </section>
     <section class="u-align-center u-clearfix u-custom-color-2 u-section-2" id="sec-7111">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h2 class="u-text u-text-1">Já possui uma conta? <a href="index.html" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-active-custom-color-5 u-text-custom-color-4 u-text-hover-custom-color-6 u-btn-1">Clique aqui</a>&nbsp;para entrar
+        <h2 class="u-text u-text-1">Já possui uma conta? <a href="index.php" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-active-custom-color-5 u-text-custom-color-4 u-text-hover-custom-color-6 u-btn-1">Clique aqui</a>&nbsp;para entrar
         </h2>
         <h2 class="u-text u-text-2">Caso não tenha crie a sua agora mesmo!</h2>
       </div>

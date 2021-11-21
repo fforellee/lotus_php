@@ -4,7 +4,7 @@ include("../php/conexao.php");
 
 session_start();
 
-$sql = 'SELECT * FROM cliente';
+$sql = "SELECT * FROM cliente WHERE CPF ='".$_SESSION['CPF']."'";
 $result = mysqli_query($conn, $sql); 
 if (!isset($_SESSION['login'])) {
   header("Location: ../html/index.php");
@@ -91,30 +91,31 @@ $dados = mysqli_fetch_object($result);
                   </h4>
                   <div class="u-border-3 u-border-custom-color-4 u-expanded-width u-line u-line-horizontal u-line-1"></div>
                   <div class="u-form u-form-1">
-                    <form action="#" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 0;" source="custom" name="form">
+                    <form action="../php/update.php" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 0;" source="custom" name="form">
                       <div class="u-form-group u-form-group-1">
                         <label for="text-c16a" class="u-label u-label-1"></label>
-                        <input type="text" placeholder="<?php echo $dados->Nome_completo;?>" id="text-c16a" name="alterar_nome" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
+                        <label for="text-2a8c" class="u-label u-label-2">Nome Completo</label>
+                        <input name="Nome_Completo" type="text" placeholder="<?php echo $dados->Nome_completo;?>" id="text-c16a" name="alterar_nome" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-form-group u-form-group-2">
                         <label for="text-2a8c" class="u-label u-label-2">Data de Nascimento</label>
-                        <input type="text" placeholder="<?php echo $dados->Data_nascimento;?>" id="text-2a8c" name="alterar_data" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" maxlength="10" onkeyup="mascara(this, mdata);">
+                        <input name="Data_nascimento" type="text" placeholder="<?php echo $dados->Data_nascimento;?>" id="text-2a8c" name="alterar_data" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" maxlength="10" onkeyup="mascara(this, mdata);">
                       </div>
                       <div class="u-form-group u-form-group-3">
                         <label for="text-da6f" class="u-label u-label-3">CPF</label>
-                        <input type="text" placeholder="<?php echo $dados->CPF;?>" id="text-da6f" name="alterar_cpf" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" maxlength="14" onkeyup="mascara(this, mcpf);">
+                        <input name="CPF" type="text" placeholder="<?php echo $dados->CPF;?>" id="text-da6f" name="alterar_cpf" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" maxlength="14" onkeyup="mascara(this, mcpf);">
                       </div>
                       <div class="u-form-group u-form-group-4">
                         <label for="text-7700" class="u-label u-label-4">Email</label>
-                        <input type="email" placeholder="<?php echo $dados->Email;?>" id="text-7700" name="alterar_email" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
+                        <input name="Email" type="email" placeholder="<?php echo $dados->Email;?>" id="text-7700" name="alterar_email" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-form-group u-form-group-5">
                         <label for="text-3a02" class="u-label u-label-5">Senha</label>
-                        <input type="password" placeholder="********" id="text-3a02" name="alterar_senha" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
+                        <input name="Senha" type="password" placeholder="********" id="text-3a02" name="alterar_senha" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-form-group u-form-group-6">
                         <label for="text-10ca" class="u-label u-label-6">CEP</label>
-                        <input type="text" id="text-10ca" name="alterar_cep" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" placeholder="cep atual" maxlength="9" onkeyup="mascara(this, mcep);">
+                        <input name="Endereço_CEP" type="text" id="text-10ca" name="alterar_cep" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" placeholder="cep atual" maxlength="9" onkeyup="mascara(this, mcep);">
                       </div> 
                       <div class="u-form-group u-form-group-7">
                         <label for="text-c63f" class="u-label u-label-7">Logradouro</label>
@@ -122,7 +123,7 @@ $dados = mysqli_fetch_object($result);
                       </div>
                       <div class="u-form-group u-form-group-8">
                         <label for="text-2358" class="u-form-control-hidden u-label u-label-8"></label>
-                        <input type="text" placeholder="<?php echo $dados->Endereço_Num_residencia;?>" id="text-2358" name="alterar_logradouro2" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
+                        <input name="Endereço_Num_residencia" type="text" placeholder="<?php echo $dados->Endereço_Num_residencia;?>" id="text-2358" name="alterar_logradouro2" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-form-group u-form-group-9">
                         <label for="text-db53" class="u-label u-label-9">Número da Residência</label>
@@ -133,7 +134,7 @@ $dados = mysqli_fetch_object($result);
                         <input type="text" placeholder="<?php echo $dados->Endereço_Complemento;?>" id="text-9ad7" name="alterar_complemento" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-align-center u-form-group u-form-submit">
-                        <a href="#" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-4 u-hover-custom-color-5 u-radius-12 u-btn-2">ALTERAR DADOS<br>
+                        <a class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-4 u-hover-custom-color-5 u-radius-12 u-btn-2">ALTERAR DADOS<br>
                         </a>
                         <input type="submit" value="submit" class="u-form-control-hidden">
                       </div>
