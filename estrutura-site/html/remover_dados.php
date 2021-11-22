@@ -1,3 +1,17 @@
+<?php
+
+include("../php/conexao.php");
+
+session_start();
+
+$sql = "SELECT * FROM cliente WHERE CPF ='".$_SESSION['CPF']."'";
+$result = mysqli_query($conn, $sql); 
+if (!isset($_SESSION['login'])) {
+  header("Location: ../html/index.php");
+  }
+$dados = mysqli_fetch_object($result);
+
+?>
  <!DOCTYPE html>
 <html style="font-size: 16px;" lang="pt-BR">
   <head>
@@ -80,7 +94,7 @@
                     <form action="#" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 0;" source="custom" name="form">
                       <div class="u-form-group u-form-group-1">
                         <label for="text-10ca" class="u-label u-label-1">CEP</label>
-                        <input type="text" id="text-10ca" name="remover_cep" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" placeholder="cep atual" maxlength="9" onkeyup="mascara(this, mcep);">
+                        <input type="text" id="text-10ca" name="remover_cep" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" placeholder="<?php echo $dados->Endereço_CEP;?>" maxlength="9" onkeyup="mascara(this, mcep);">
                       </div>
                       <div class="u-form-group u-form-group-2">
                         <label for="text-c63f" class="u-label u-label-2">Logradouro(s)</label>

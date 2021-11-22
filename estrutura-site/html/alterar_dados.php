@@ -91,7 +91,8 @@ $dados = mysqli_fetch_object($result);
                   </h4>
                   <div class="u-border-3 u-border-custom-color-4 u-expanded-width u-line u-line-horizontal u-line-1"></div>
                   <div class="u-form u-form-1">
-                    <form action="../php/update.php" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 0;" source="custom" name="form">
+
+                    <form action="../php/update.php" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 0;">
                       <div class="u-form-group u-form-group-1">
                         <label for="text-c16a" class="u-label u-label-1"></label>
                         <label for="text-2a8c" class="u-label u-label-2">Nome Completo</label>
@@ -134,14 +135,13 @@ $dados = mysqli_fetch_object($result);
                         <input type="text" placeholder="<?php echo $dados->Endereço_Complemento;?>" id="text-9ad7" name="alterar_complemento" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-align-center u-form-group u-form-submit">
-                        <a class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-4 u-hover-custom-color-5 u-radius-12 u-btn-2">ALTERAR DADOS<br>
-                        </a>
-                        <input type="submit" value="submit" class="u-form-control-hidden">
+                        <input type="submit" name="submit" value="Alterar Dados" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-4 u-hover-custom-color-5 u-radius-12 u-btn-2">
                       </div>
+                      <!-- <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div> -->
                       <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                      <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
                       <input type="hidden" value="" name="recaptchaResponse">
                     </form>
+
                   </div>
                   <div class="u-container-style u-expanded-width u-group u-group-1">
                     <div class="u-container-layout">
@@ -158,7 +158,6 @@ $dados = mysqli_fetch_object($result);
         </div>
       </div>
     </section>
-    
     <footer class="u-align-center u-clearfix u-custom-color-4 u-footer u-footer" id="sec-5317">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <img class="u-image u-image-default u-preserve-proportions u-image-1" src="../images/white-logo2.png" alt="" data-image-width="65" data-image-height="71">
