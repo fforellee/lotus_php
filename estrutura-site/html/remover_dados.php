@@ -20,7 +20,7 @@ $dados = mysqli_fetch_object($result);
     <meta name="keywords" content=""> 
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Remover Dados</title>
+    <title>Inserir dados de endereço</title>
     <link rel="stylesheet" href="../css/profile.css" media="screen">
     <link rel="stylesheet" href="../css/remover_dados.css" media="screen">
     <script class="u-script" type="text/javascript" src="../js/jquery2.js" defer=""></script>
@@ -91,31 +91,32 @@ $dados = mysqli_fetch_object($result);
                   </h4>
                   <div class="u-border-3 u-border-custom-color-4 u-expanded-width u-line u-line-horizontal u-line-1"></div>
                   <div class="u-form u-form-1">
-                    <form action="#" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 0;" source="custom" name="form">
+                    <form action="../php/delete.php" method="POST" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" style="padding: 0;" source="custom" name="form">
                       <div class="u-form-group u-form-group-1">
                         <label for="text-10ca" class="u-label u-label-1">CEP</label>
-                        <input type="text" id="text-10ca" name="remover_cep" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" placeholder="<?php echo $dados->Endereço_CEP;?>" maxlength="9" onkeyup="mascara(this, mcep);">
+                        <input type="text" id="text-10ca" name="Endereço_CEP" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white" value="<?php echo $dados->Endereço_CEP;?>" maxlength="9" onkeyup="mascara(this, mcep);">
                       </div>
                       <div class="u-form-group u-form-group-2">
                         <label for="text-c63f" class="u-label u-label-2">Logradouro(s)</label>
-                        <input type="text" placeholder="Endereço 1" id="text-c63f" name="remover_logradouro" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
+                        <input type="text" value="<?php echo $dados->Endereço_Logradouro?>" id="text-c63f" name="Endereço_Logradouro" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-form-group u-form-group-3">
                         <label for="text-2358" class="u-form-control-hidden u-label u-label-3"></label>
-                        <input type="text" placeholder="Endereço 2" id="text-2358" name="remover_logradouro2" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
+                        <input type="text" value="" id="text-2358" name="remover_logradouro2" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-form-group u-form-group-4">
                         <label for="text-db53" class="u-label u-label-4">Número da Residência</label>
-                        <input type="text" placeholder="123" id="text-db53" name="remover_numero" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
+                        <input type="text" value="<?php echo $dados->Endereço_Num_residencia?>" id="text-db53" name="Endereço_Num_residencia" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-form-group u-form-group-5">
                         <label for="text-9ad7" class="u-label u-label-5">Complemento</label>
-                        <input type="text" placeholder="complemento atual" id="text-9ad7" name="remover_complemento" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
+                        <input type="text" value="<?php echo $dados->Endereço_Complemento?>" id="text-9ad7" name="Endereço_Complemento" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white">
                       </div>
                       <div class="u-align-center u-form-group u-form-submit">
-                        <a href="#" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-4 u-hover-custom-color-5 u-radius-12 u-btn-2">REMOVER DADOS<br>
-                        </a>
-                        <input type="submit" value="submit" class="u-form-control-hidden">
+
+                      <div class="u-align-center u-form-group u-form-submit">
+                        <input type="submit" name="submit" value="Remover Dados" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-4 u-hover-custom-color-5 u-radius-12 u-btn-2">
+                      </div>
                       </div>
                       <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
                       <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>

@@ -1,33 +1,24 @@
 <?php
 include("conexao.php");
 
-// if($_POST['Nome_completo'] == ''){$nome = $dados->Nome_completo;}else{$nome = $_POST['Nome_completo'];}
-// if($_POST['Data_nascimento'] == ''){$data_nascimento = $dados->Data_nascimento;}else{$data_nascimento = $_POST['Data_nascimento'];}
-// if($_POST['CPF'] == ''){$CPF = $dados->CPF;}else{$CPF = $_POST['CPF'];}
-// if($_POST['Email'] == ''){$email = $dados->Email;}else{$email = $_POST['Email'];}
-// if($_POST['Senha'] == ''){$senha = $dados->Senha;}else{$senha = $_POST['Senha'];}
-// if($_POST['Endereço_CEP'] == ''){$CEP = $dados->Endereço_CEP;}else{$CEP = $_POST['Endereço_CEP'];}
+session_start();
 
 
-// $update = "UPDATE cliente SET Nome_Completo ='".$nome."',".
-//                         "Data_Nascimento ='".$data_nascimento."',".
-//                         "CPF ='".$CPF."',".  
-//                         "Email ='".$email."',".
-//                         "Senha ='".$senha."',".  
-//                         "CEP ='".$CEP."',".
-//                         "Endereço_Logradouro ='".$_POST['Endereço_Logradouro']."',".
-//                         "Endereço_Num_residencia ='".$_POST['Endereço_Num_residencia ']."',".
-//                         "Endereço_Logradouro ='".$_POST['Endereço_Logradouro ']."'".
-//                         "WHERE CPF ='".$_SESSION['CPF']."'";
+$cpf = $_SESSION['CPF'];
+$nome = $_POST['Nome_Completo'];
 
+$data = date('Y-m-d', strtotime(str_replace('/', '-', $_POST['Data_nascimento'])));
+$data_nascimento = $data;
 
+$CPF = $_POST['CPF'];
+$email = $_POST['Email'];
+$senha = $_POST['Senha'];
+$endereco_cep = $_POST['Endereço_CEP'];
+$endereco_num_residencia = $_POST['Endereço_Num_residencia'];
+$endereco_logradouro = $_POST['Endereço_Logradouro'];
+$endereco_complemento = $_POST['Endereço_Complemento'];
 
-$update = "UPDATE cliente  SET Nome_completo = '".$nome."'";
+$update = "UPDATE cliente SET Nome_completo='$nome',Data_Nascimento = '$data_nascimento', CPF = '$CPF', Email ='$email',Senha='$senha',Endereço_CEP ='$endereco_cep',Endereço_Logradouro = '$endereco_logradouro',Endereço_Num_residencia = '$endereco_num_residencia',Endereço_Complemento='$endereco_complemento' WHERE CPF='$cpf'";
 
-if(mysqli_query($conn,$update)){
-    echo "true";
-}else{
-    echo "false";
-}
-
+mysqli_query($conn,$update);
 ?>

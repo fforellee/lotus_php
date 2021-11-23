@@ -22,7 +22,7 @@
         $res_Usu = "INSERT INTO cliente (Nome_completo, Data_nascimento,Sexo,Email,Senha,Endereço_Logradouro,Endereço_Num_residencia,Endereço_Complemento,cpf,Num_tel,Endereço_CEP)
         VALUES ('$nome','$data','$sexo','$email','$senha','$endereco','$numeroC','$complemento','$stringCorrigida','$telefone','$cep')";
         $resultado_Usu = mysqli_query($conn, $res_Usu);
-        include_once('../html/index.html');
+        include_once('../html/index.php');
     }else {
         $alert = "<script>alert('Você deve digitar duas senhas iguais nos campos Senha e Confirmar a Senha');</script>";
         echo $alert;

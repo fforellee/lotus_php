@@ -1,9 +1,18 @@
 <?php
 include("conexao.php");
 
-$CPF = $_SESSION['CPF'];
+session_start();
 
-$delete = "ALTER TABLE cliente DROP COLUMN Endereço_CEP,Endereço_Logradouro,Endereço_Num_residencia,Endereço_Complemento WHERE CPF = '".$CPF."'";
+$cpf = $_SESSION['CPF'];
 
-mysqli_query($conn,delete);
+
+$delete = "UPDATE cliente SET Endereço_CEP='',Endereço_Logradouro='',Endereço_Num_residencia='',Endereço_Complemento='' WHERE CPF ='$cpf'";
+
+
+if(mysqli_query($conn,$delete)){
+    echo"true";
+}else{
+    echo"false";
+}
+
 ?>
